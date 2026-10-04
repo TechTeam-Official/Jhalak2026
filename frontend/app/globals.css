@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #050811;
+  --foreground: #f8fafc;
+  --wheel-radius: 220px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --wheel-radius: 275px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --wheel-radius: 320px;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Typography Utility Classes */
+.font-cinzel-dec {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Luxurious Gold Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5DEB3 30%, #D4AF37 70%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FCE8B3 60%, #E6C670 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-metallic {
+  background: linear-gradient(135deg, #ECC870 0%, #FFF3D1 35%, #D4AF37 70%, #997316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Glow Filters */
+.gold-glow {
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.45));
+}
+
+.gold-glow-subtle {
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.25));
+}
+
+/* Gold Button */
+.btn-gold {
+  background: linear-gradient(180deg, #F3D079 0%, #D4AF37 50%, #B88E28 100%);
+  color: #120e03;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.btn-gold:hover::after {
+  left: 100%;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background: linear-gradient(180deg, #FFE08F 0%, #E2BE48 50%, #C99E33 100%);
+  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-gold:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+  box-shadow: none;
+}
+
+/* Celestial Orbit Animation (32s continuous linear) */
+@keyframes celestial-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: celestial-orbit 32s linear infinite;
+}
+
+.animate-orbit-paused {
+  animation-play-state: paused;
+}
+
+/* Subtle Shimmer */
+@keyframes gold-shimmer {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.animate-gold-shimmer {
+  animation: gold-shimmer 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050811;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
