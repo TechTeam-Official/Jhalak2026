@@ -223,8 +223,8 @@ export function allocateHouse(
     if (!registrationId || !/^\d{3}$/.test(registrationId)) {
       return null;
     }
-    const num = parseInt(registrationId, 10);
-    const mod = num % 4;
+    const sum = registrationId.split('').reduce((acc, digit) => acc + parseInt(digit, 10), 0);
+    const mod = sum % 4;
     const mapping: Record<number, string> = {
       0: "trishul",
       1: "agni",
@@ -236,7 +236,7 @@ export function allocateHouse(
     return {
       house,
       academicInfo: `Engineering and Technology · UG · ${registrationId}`,
-      allocationReason: `Registration Digits ${registrationId} (${num} mod 4 = ${mod}) → ${house.name}`,
+      allocationReason: `Registration Digits ${registrationId} (Sum: ${sum} mod 4 = ${mod}) → ${house.name}`,
     };
   }
 
