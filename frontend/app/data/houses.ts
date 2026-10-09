@@ -122,16 +122,16 @@ export const HOUSES: HouseData[] = [
     description: "King of the gods; sky, thunder and lightning",
   },
   {
-    id: "naag",
-    name: "NAAG",
+    id: "nag",
+    name: "NAG",
     deity: "Asclepius",
     deityTitle: "God of Medicine",
     slogan: "Wisdom to heal, power to endure.",
     eligibility: "Architecture and Hotel Management UG",
     accentColor: "#84cc16",
     accentName: "Venom Green",
-    cardImage: "/images/cards/naag-hd2.png",
-    badgeImage: "/images/badges/naag-hd2.png",
+    cardImage: "/images/cards/nag-hd2.png",
+    badgeImage: "/images/badges/nag-hd2.png",
     badgeBg: "#ffffff",
     description: "Greek god of medicine; wields the serpent-entwined rod",
   },
@@ -211,11 +211,11 @@ export function allocateHouse(
   }
 
   if (isArch || isHotel) {
-    const house = HOUSES.find((h) => h.id === "naag")!;
+    const house = HOUSES.find((h) => h.id === "nag")!;
     return {
       house,
       academicInfo: `${school} · Undergraduate (UG)`,
-      allocationReason: "Architecture or Hotel Management UG → Naag",
+      allocationReason: "Architecture or Hotel Management UG → Nag",
     };
   }
 

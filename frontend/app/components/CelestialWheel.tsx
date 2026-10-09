@@ -21,7 +21,7 @@ export default function CelestialWheel({ onSelectHouse }: CelestialWheelProps) {
     HOUSES.find((h) => h.id === "agni")!,
     HOUSES.find((h) => h.id === "shaurya")!,
     HOUSES.find((h) => h.id === "aakash")!,
-    HOUSES.find((h) => h.id === "naag")!,
+    HOUSES.find((h) => h.id === "nag")!,
   ];
 
   return (
